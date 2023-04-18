@@ -1,6 +1,6 @@
 # TheK8sBook hands-on
 
-This guide is based on the book of Nigel Poulton - The Kubernets book. It includes commands to manage  K8s clusters.
+This guide is based on the book of *Nigel Poulton - The Kubernets book*. It includes commands to manage  K8s clusters.
 
 ## kubectl commands
 ---
@@ -12,6 +12,24 @@ To list all K8s nodes
 To view the K8s config file 
 
 `kubectl config view`
+
+To show the current context
+
+`kubectl config current-context`
+
+Switch to another context
+
+`kubectl config use-context docker-desktop` 
+
+where docker-desktop is a valid context defined in kubeconfig
+
+To list all possible Pod's attributes
+
+`kubectl explain pods --recursive`
+
+Drill into specific attributes. The following command drills into the restart policy attribute of a Pod object.
+
+`kubectl explain pod.spec.restartPolicy`
 
 # K3D create cluster 
 
