@@ -2,8 +2,7 @@
 
 This guide is based on the book of *Nigel Poulton - The Kubernets book*. It includes commands to manage  K8s clusters.
 
-## kubectl commands
----
+# kubectl commands
 
 To list all K8s nodes
 
@@ -30,6 +29,81 @@ To list all possible Pod's attributes
 Drill into specific attributes. The following command drills into the restart policy attribute of a Pod object.
 
 `kubectl explain pod.spec.restartPolicy`
+
+Create Pod from a manifest file
+
+`kubectl apply -f ./pod.yml`
+
+To delete the resources created by the YAML manifest file
+
+`kubectl delete -f ./pod.yml`
+
+To get the running Pods or Services
+
+`kubectl get pods`
+
+`kubectl get svc`
+
+To get more detailed information about the Pod you can use one of the following commands
+
+`kubectl get pods -o wide`
+
+`kuebctl get pods -o yaml`
+
+If you want to better introspect the pod use the describe command
+
+`kubectl describe pods hello-pod`
+
+To enter in the container and open a shell
+
+`kubectl exec -it hello-pod -- sh`
+
+To delete a all pods and respective services
+
+`kubectl delete pods`
+
+`kubectl delete svc`
+
+List all namespaces
+
+`kubectl get ns`
+
+Set the default namespace against which to execute the commands and not providing it in the parameters every time
+
+`kubectl config set-context --current --namespace shield`
+
+# Deployments
+
+Inspecting deployment
+
+`kubectl get deploy hello-deploy`
+
+`kubectl describe deploy hello-deploy`
+
+Inspect the replica set
+
+`kubectl get rs`
+
+Then use the returned replica set to describe it
+
+`kubectl describe rs hello-deploy-bb4cf4dd4`
+
+To monitor the upgrading progress
+
+`kubectl rollout status deployment hello-deploy`
+
+To see the history of specific deployment upgrades
+
+`kubectl rollout history deployment hello-deploy`
+
+To delete a deployment
+
+`kubectl delete -f ./deploy.yaml`
+
+# Services
+
+
+
 
 # K3D create cluster 
 
