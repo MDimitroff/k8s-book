@@ -72,6 +72,34 @@ Set the default namespace against which to execute the commands and not providin
 
 `kubectl config set-context --current --namespace shield`
 
+Get information about the deployed ingress
+
+`kubectl get ing`
+
+Get a list of all available Kubernetes resources
+
+`kubectl api-resources`
+
+List all available storage classes provided by your cloud operator (in case Kubernetes was hosted in a cloud)
+
+`kubectl get sc`
+
+# ConfigMaps
+
+Get all config maps
+
+`kubectl get cm`
+
+Create a ConfigMap from file
+
+`kubectl create cm testmap2 --from-file cmfile.txt`
+
+Get the ConfigMap as YAML file
+
+`kubectl get cm testmap2 -o yaml`
+
+
+
 # Deployments
 
 Inspecting deployment
