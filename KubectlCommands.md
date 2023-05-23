@@ -130,6 +130,19 @@ To delete a deployment
 
 # Services
 
+# High availability
+
+Check the HPA profile
+
+`kubectl get hpa`
+
+
+# Endpoints
+
+Get available endpoints
+
+`kubectl get endpoints`
+
 
 
 
