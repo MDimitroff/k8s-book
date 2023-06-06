@@ -120,6 +120,9 @@ To monitor the upgrading progress
 
 `kubectl rollout status deployment hello-deploy`
 
+Restart a deployment
+`kubectl rollout restart deployment -n dev {user-profile-deployment}`
+
 To see the history of specific deployment upgrades
 
 `kubectl rollout history deployment hello-deploy`
